@@ -1,3 +1,4 @@
+package arrays;
 public class MoveZeroesToEnd {
 
     public static void moveZeroesToEnd(int arr[], int n){
