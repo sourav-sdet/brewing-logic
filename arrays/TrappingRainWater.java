@@ -3,7 +3,7 @@ package arrays;
 public class TrappingRainWater {
 
 
-    public static int findUnitsOfWaterStored(int arr[], int n){
+    public static int maxWaterStoredNaive(int arr[], int n){
 
         int result=0;
 
@@ -31,11 +31,55 @@ public class TrappingRainWater {
     }
 
 
+    public static int maxWaterStored(int arr[], int n){
+
+        int totalWater=0;
+        int l=0, r=n-1;
+
+        //lMax will hold the largest value from arr[0] to arr[l]
+        int lMax=arr[l];
+
+        //rMax will hold the largest value from arr[n-1] to arr[r]
+        int rMax=arr[r];
+
+        while(l <= r){
+            // rMax is smaller
+            if(lMax >= rMax){
+                totalWater += (rMax-arr[r]);
+            
+
+                r--;
+
+                if(r>=0)
+                    rMax=Math.max(rMax, arr[r]);
+            }
+
+            // lMax is smaller
+            else{
+
+                totalWater += (lMax-arr[l]);
+
+                l++;
+
+                if(l<n)
+                    lMax= Math.max(lMax, arr[l]);
+
+
+            }
+
+        }
+        return totalWater;
+
+
+
+    }
+
     public static void main(String args[]){
 
         int arr[] ={3,0,1,0,4,0,2};
         
-        int result= findUnitsOfWaterStored(arr, arr.length);
+        //int result= maxWaterStoredNaive(arr, arr.length);
+        int result= maxWaterStored(arr, arr.length);
         System.out.println(result);
 		
     }
