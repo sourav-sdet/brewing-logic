@@ -26,10 +26,32 @@ public class EquilibriumPoint {
 
         }
 
+
+        public static boolean equilibriumPoint(int arr[], int n){
+
+            // Calculate the total array sum as rSum
+            int rSum=0;
+            for(int i=0; i<n; i++){
+                rSum = rSum + arr[i];
+            }
+
+            // Initialise lSum = 0
+            int lSum=0;
+            for(int i=0; i<n; i++){
+                rSum = rSum - arr[i];
+                if(lSum == rSum)
+                    return true;
+                lSum = lSum + arr[i];
+            }
+
+            return false;
+        }
+
+
         public static void main(String args[]){
 
         int arr[] ={3,4,8,-9,9,7};
-        System.out.println(equilibriumPointNaive(arr,arr.length));
+        System.out.println(equilibriumPoint(arr,arr.length));
 		
     }
     
