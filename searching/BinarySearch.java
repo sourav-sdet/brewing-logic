@@ -1,6 +1,6 @@
 package searching;
 
-public class BinarySearchIterative {
+public class BinarySearch {
 
     public static int binarySearchIterative(int arr[], int n, int x){
 
