@@ -17,10 +17,29 @@ public class IsPairSumSortedArray {
     }
 
 
+
+    public static boolean isPairSum(int arr[], int n, int sum){
+
+        // TWO POINTER TECHNIQUE
+        int left = 0, right = n-1;
+
+        while(left < right){
+            if(arr[left] + arr[right] == sum)
+                return true;
+            else if(arr[left] + arr[right] > sum)
+                right --;
+            else
+                left ++;
+        }
+        return false;
+
+
+    }
+
     public static void main(String args[]){
 
-        int arr[]={2,3,8,11};
-        boolean result = isPairSumNaive(arr, arr.length,14 );
+        int arr[]={2,4,8,9,11,12,20,30};
+        boolean result = isPairSumNaive(arr, arr.length,23 );
         System.out.println(result);
 
     }
