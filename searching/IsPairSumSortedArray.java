@@ -39,7 +39,7 @@ public class IsPairSumSortedArray {
     public static void main(String args[]){
 
         int arr[]={2,4,8,9,11,12,20,30};
-        boolean result = isPairSumNaive(arr, arr.length,23 );
+        boolean result = isPairSum(arr, arr.length,23 );
         System.out.println(result);
 
     }
