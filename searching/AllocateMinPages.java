@@ -29,13 +29,56 @@ public class AllocateMinPages {
     }
 
 
+    public static int allocateMinPages(int arr[], int n, int k){
 
-    
+        // Compute the sum of array and max element of array
+        int sum = 0, mx = 0;
+        for(int i=0; i<n; i++){
+            sum = sum + arr[i];
+            mx = Math.max(mx, arr[i]);
+        }
+
+        // Binary Search from max to sum
+        int low = mx, high = sum, result =0;
+
+        while(low <= high){
+            int mid = (low + high)/2;
+
+            if(ifFeasible(arr, n, k , mid)){
+                result = mid;
+                high = mid -1;
+            }
+            else 
+                low = mid + 1;
+
+        }
+        return result;
+
+
+    }
+
+
+    public static boolean ifFeasible(int arr[], int n, int k, int ans){
+
+        int req=1, sum = 0;
+
+        for(int i=0; i<n; i++){
+            if(sum + arr[i] > ans){
+                req ++;
+                sum = sum + arr[i];
+            }
+            else 
+                sum = sum + arr[i];
+        }
+
+        return (req <= k);
+    }
+
 
     public static void main(String args[]){
 
         int arr[] = {10,20,30,40};
-        int result = allocateMinPagesNaive(arr, arr.length, 2);
+        int result = allocateMinPages(arr, arr.length, 2);
         System.out.println(result);
         	
     }
