@@ -1,5 +1,7 @@
 package strings;
 
+import java.util.Arrays;
+
 public class LeftmostNonRepeatingCharacter {
 
     public static int leftMostNonRepeatingCharacterNaive(String str){
@@ -38,10 +40,34 @@ public class LeftmostNonRepeatingCharacter {
 
     }
 
+    public static int leftMostNonRepeatingCharacterEfficient(String str){
+
+        int fIndex[] = new int[256];
+        Arrays.fill(fIndex, -1);
+
+        // Traverse through the input string from left to right
+        for(int i=0; i< str.length(); i++){
+            if(fIndex[str.charAt(i)] == -1)
+                fIndex[str.charAt(i)] = i;
+            else 
+                fIndex[str.charAt(i)] = -2;
+        }
+
+        int res = Integer.MAX_VALUE;
+        for(int i=0; i < 256; i++){
+            if(fIndex[i] >=0)
+                res = Math.min(res, fIndex[i]);
+        }
+
+        return (res == Integer.MAX_VALUE)? -1: res;
+
+
+    }
+
     public static void main(String args[]){
 
         String str = "geeksforgeeks";
-        System.out.println(leftMostNonRepeatingCharacterBetter(str));
+        System.out.println(leftMostNonRepeatingCharacterEfficient(str));
         	
     }
     
