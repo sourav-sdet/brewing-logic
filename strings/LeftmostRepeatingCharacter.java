@@ -38,7 +38,7 @@ public class LeftmostRepeatingCharacter {
 
     }
 
-    public static int leftMostRepeatingCharacterEfficient(String str){
+    public static int leftMostRepeatingCharacterEfficientOne(String str){
 
         // Traverse the string from left to right
         // Keep track of index of first occurrence of every character
@@ -62,10 +62,32 @@ public class LeftmostRepeatingCharacter {
 
     }
 
+    public static int leftMostRepeatingCharacterEfficientTwo(String str){
+
+        boolean visited[] = new boolean[256];
+        int res=-1;
+
+        // Traverse the array from RIGHT to LEFT
+        for(int i=str.length() -1; i>=0; i--){
+
+            // Check if the character is already visited
+            if(visited[str.charAt(i)]){
+                res = i;
+            }
+            else
+                visited[str.charAt(i)] = true;
+        }
+
+        return res;
+
+
+    }
+
+
     public static void main(String args[]){
 
         String str = "abccbd";
-        System.out.println(leftMostRepeatingCharacterEfficient(str));
+        System.out.println(leftMostRepeatingCharacterEfficientTwo(str));
         	
     }
     
