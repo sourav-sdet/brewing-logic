@@ -17,10 +17,29 @@ public class LeftmostRepeatingCharacter {
 
     }
 
+
+    public static int leftMostRepeatingCharacterBetter(String str){
+
+        // String Character as indexes in a count array and store their frequencies
+        int count[] = new int[256];
+
+        for(int i=0; i< str.length(); i++){
+            count[str.charAt(i)]++;
+        }
+
+        for(int i=0; i<str.length(); i++){
+            if(count[str.charAt(i)] > 1)
+                return i;
+        }
+
+        return -1;
+
+    }
+
     public static void main(String args[]){
 
-        String str = "geeksforgeeks";
-        System.out.println(leftMostRepeatingCharacterNaive(str));
+        String str = "abccbd";
+        System.out.println(leftMostRepeatingCharacterBetter(str));
         	
     }
     
