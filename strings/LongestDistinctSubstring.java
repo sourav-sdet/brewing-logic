@@ -1,5 +1,7 @@
 package strings;
 
+import java.util.Arrays;
+
 public class LongestDistinctSubstring {
 
     public static int longestDictinctNaive(String str){
@@ -64,10 +66,46 @@ public class LongestDistinctSubstring {
 
     }
 
+    public static int longestDistinct(String str){
+        int n=str.length(), result =0;
+
+        // Create an initialize a previous array with -1
+        int prev[] = new int[256];
+        Arrays.fill(prev, -1);
+
+        // Starting Index i
+        int i=0;
+
+        // Iterate from j=0 to n-1
+        for(int j=0; j<n; j++){
+
+            // To compute maxEnd, we need starting index i and ending index j
+            i = Math.max(i, prev[str.charAt(j)]+1);
+
+
+            // Compute maxEnd for every index j
+            int maxEnd = j-i+1;
+
+            // Find out the max of maxEnd- this is the result
+            result = Math.max(maxEnd, result);
+
+            prev[str.charAt(j)] = j;
+        }
+
+        return result;
+
+
+
+
+
+    }
+
+
+
     public static void main(String args[]){
 
-        String str = "abacde";
-        System.out.println(longestDistinctBetter(str));   
+        String str = "abcadbd";
+        System.out.println(longestDistinct(str));   
         	
     }
     
