@@ -22,7 +22,7 @@ public class LexicographicRank {
         }
 
         for(int i=0; i<n-1; i++){
-            mul = mul / n-i;
+            mul = mul / (n-i);
             res = res + count[str.charAt(i) -1] * mul;
             for(int j= str.charAt(i); j < 256; j++)
                 count[j]--;
