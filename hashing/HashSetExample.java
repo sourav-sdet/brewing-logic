@@ -8,6 +8,7 @@ public class HashSetExample {
     public static void main(String args[]){
 
         HashSet<String> hset = new HashSet<>();
+        //HashSet<String> hset1 = new HashSet<>(10);
 
 
         // Add Items to a HashSet
