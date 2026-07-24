@@ -1,5 +1,6 @@
 package hashing;
 
+import java.util.Arrays;
 import java.util.HashSet;
 
 public class CountDistinctElements {
@@ -30,6 +31,7 @@ public class CountDistinctElements {
 
         // Iterate through the array and put elements into a HashSet, return size of HashSet
         HashSet<Integer> hset = new HashSet<>();
+        //HashSet<Integer> hset = new HashSet<>(Arrays.asList(arr));
 
         for(int i=0; i<n; i++){
             hset.add(arr[i]);
