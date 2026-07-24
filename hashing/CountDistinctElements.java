@@ -1,5 +1,7 @@
 package hashing;
 
+import java.util.HashSet;
+
 public class CountDistinctElements {
 
     public static int countDistinctNaive(int[] arr, int n){
@@ -24,10 +26,24 @@ public class CountDistinctElements {
     }
 
 
+    public static int countDistinct(int arr[], int n){
+
+        // Iterate through the array and put elements into a HashSet, return size of HashSet
+        HashSet<Integer> hset = new HashSet<>();
+
+        for(int i=0; i<n; i++){
+            hset.add(arr[i]);
+        }
+
+        return hset.size();
+
+
+    }
+
     public static void main(String args[]){
 
         int[] arr={10,20,10,20,30};
-        int result = countDistinctNaive(arr, arr.length);
+        int result = countDistinct(arr, arr.length);
         System.out.println(result);
 
 
