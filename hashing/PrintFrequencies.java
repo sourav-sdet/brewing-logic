@@ -1,6 +1,7 @@
 package hashing;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class PrintFrequencies {
@@ -41,7 +42,8 @@ public class PrintFrequencies {
 
     public static void printFrequencies(int arr[], int n){
 
-        HashMap<Integer, Integer> hmap = new HashMap<>();
+        // HashMap<Integer, Integer> hmap = new HashMap<>();
+        LinkedHashMap<Integer, Integer> hmap = new LinkedHashMap<>();
 
         for(int x: arr){
             hmap.put(x, hmap.getOrDefault(x, 0)+1);
@@ -56,7 +58,7 @@ public class PrintFrequencies {
 
     public static void main(String args[]){
 
-        int[] arr={10,20,10,20,30};
+        int[] arr={10,20,10,20,30, 40, 40, 5};
         printFrequencies(arr, arr.length);
         
 
