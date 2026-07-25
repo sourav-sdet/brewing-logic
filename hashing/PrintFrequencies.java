@@ -1,5 +1,8 @@
 package hashing;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class PrintFrequencies {
 
     public static void printFrequenciesNaive(int arr[], int n){
@@ -35,10 +38,26 @@ public class PrintFrequencies {
 
     }
 
+
+    public static void printFrequencies(int arr[], int n){
+
+        HashMap<Integer, Integer> hmap = new HashMap<>();
+
+        for(int x: arr){
+            hmap.put(x, hmap.getOrDefault(x, 0)+1);
+        }
+
+        for(Map.Entry<Integer, Integer> e: hmap.entrySet()){
+            System.out.println(e.getKey() + " "+ e.getValue());
+
+        }
+
+    }
+
     public static void main(String args[]){
 
         int[] arr={10,20,10,20,30};
-        printFrequenciesNaive(arr, arr.length);
+        printFrequencies(arr, arr.length);
         
 
 
