@@ -66,7 +66,7 @@ public class LongestConsecutiveSubsequence {
     public static void main(String args[]){
 
         int arr[] = {1,9,3,4,2,20};
-        System.out.println(longestConsecutiveSubsequenceNaive(arr, arr.length));
+        System.out.println(longestConsecutiveSubsequence(arr, arr.length));
     }
     
 }
