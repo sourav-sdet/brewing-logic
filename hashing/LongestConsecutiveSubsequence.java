@@ -13,7 +13,7 @@ public class LongestConsecutiveSubsequence {
         Arrays.sort(arr);
 
         // Traverse through the array from L -> R
-        for(int i=1; i<n-1; i++){
+        for(int i=1; i<n; i++){
             if(arr[i-1] + 1 == arr[i]){
                 currLen++;
             }
@@ -23,7 +23,7 @@ public class LongestConsecutiveSubsequence {
             }
         }
 
-        return maxLen;
+        return Math.max(maxLen,currLen);
 
 
     }
