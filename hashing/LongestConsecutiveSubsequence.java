@@ -1,6 +1,7 @@
 package hashing;
 
 import java.util.Arrays;
+import java.util.HashSet;
 
 public class LongestConsecutiveSubsequence {
 
@@ -29,7 +30,36 @@ public class LongestConsecutiveSubsequence {
     }
 
 
+    public static int longestConsecutiveSubsequence(int arr[], int n){
 
+        // STEP 1: Insert all array elements into a HashSet
+        HashSet<Integer> h = new HashSet<>();
+
+        for(int i=0; i<n; i++){
+            h.add(arr[i]);
+        }
+
+        // STEP 2: Perform 2n look ups to find the result
+        // Iterate through every element in the HashSet
+        int res=1;
+        for(Integer x: h){
+
+            // Check if x is a beginning element of the subsequence ==> x-1 should not be present
+            // If x-1 is present, ignore this element
+            if(h.contains(x-1) == false){
+                // It is the beginning of a subsequence
+                int curr = 1;
+                while(h.contains(x+curr))
+                    curr++;
+                res = Math.max(curr, res);
+            }
+
+
+        }
+
+        return res;
+
+    }
 
 
 
