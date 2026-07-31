@@ -48,9 +48,39 @@ public class MoreThanNSlashKOccurrences {
 
     }
 
+    public static void moreThanNSlashKOccurrencesMoores(int arr[], int n, int k){
+        // Extension to Moore's Voting Algorithm
+        // TWO PHASES
+        // PHASE 1: FIND THE CANDIDATE ELEMENTS
+
+        // Create an empty map
+        HashMap<Integer, Integer> h = new HashMap<>();
+
+        // Traverse through the array arr from L --> R
+        for(int i=0; i<n; i++){
+
+            // if arr[i] is already present in map, increment its frequency count
+            if(h.containsKey(arr[i])){
+                h.put(arr[i], h.get(arr[i]) + 1);
+            }
+
+            // if arr[i] is not present in map and map has space (size < k)
+            else if(h.size() < k-1){
+                h.put(arr[i], 1);
+            }
+
+            // if arr[i] is not present in map and map has no space
+            else {
+                // Decrement all element frequencies by 1
+                
+            }
+
+        }
+
+    }
 
     public static void main(String args[]){
-        int arr[] = {10,10,20,30,20,10,10};
-        moreThanNSlashKOccurrences(arr, arr.length, 2);
+        int arr[] = {30,10,20,20,20,10,40,30,30};
+        moreThanNSlashKOccurrencesMoores(arr, arr.length, 4);
     }
 }
