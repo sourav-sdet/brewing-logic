@@ -91,9 +91,16 @@ public class MoreThanNSlashKOccurrences {
 
 
 
-        // PHASE 2: Print elements whose frequency is greater than n/k
+        // PHASE 2: For all elements in map, print the elements that appear more than n/k times
+        // Traverse through every item in the map, count how many times it appears in the array
+        // if count > n/k, print it
         for(Map.Entry<Integer, Integer> e: h.entrySet()){
-            if(e.getValue() > (n/k))
+            int count =0;
+            for(int i=0; i<n; i++){
+                if(arr[i] == e.getKey())
+                    count ++;
+            }
+            if(count > n/k)
                 System.out.println(e.getKey());
         }
     }
