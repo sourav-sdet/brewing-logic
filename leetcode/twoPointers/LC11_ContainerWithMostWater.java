@@ -1,12 +1,31 @@
 package leetcode.twoPointers;
 
-import java.util.List;
+
 
 public class LC11_ContainerWithMostWater {
 
     public static int maxArea(int[] heights){
 
-        
+        int max=0, n=heights.length;
+
+        // TWO POINTER APPROACH
+        int left = 0, right = n-1;
+
+        while(left < right){
+
+            // Compute the area
+            int area = Math.min(heights[left], heights[right]) * (right - left);
+            max = Math.max(max, area);
+
+            if(heights[left] < heights[right])
+                left ++;
+            else 
+                right --;
+ 
+        }
+
+
+        return max;
 
     }
 
