@@ -2,7 +2,7 @@ package sorting;
 
 import java.util.Arrays;
 
-public class ArraysSorting {
+public class ArraysSortingPrimitives {
 
 
 
