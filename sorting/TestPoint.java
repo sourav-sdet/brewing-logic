@@ -1,0 +1,20 @@
+package sorting;
+
+import java.util.Arrays;
+
+public class TestPoint {
+
+
+    public static void main(String args[]){
+
+        // Array of Point Objects
+        Point arr[] = { new Point(10, 20), new Point(3, 12), new Point(5, 7)};
+
+        Arrays.sort(arr);
+
+        System.out.println(Arrays.toString(arr));
+
+
+    }
+    
+}
