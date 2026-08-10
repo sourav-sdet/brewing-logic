@@ -1,6 +1,7 @@
 package sorting;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 public class TestPoint {
 
@@ -11,6 +12,13 @@ public class TestPoint {
         Point arr[] = { new Point(10, 20), new Point(3, 12), new Point(5, 7)};
 
         Arrays.sort(arr);
+
+        for(int i=0; i<arr.length; i++){
+            System.out.println(arr[i].x + " "+arr[i].y);
+        }
+
+        // Custom Comparator
+        Arrays.sort(arr, Collections.reverseOrder());
 
         for(int i=0; i<arr.length; i++){
             System.out.println(arr[i].x + " "+arr[i].y);
