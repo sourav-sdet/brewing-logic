@@ -29,11 +29,46 @@ public class MergeSortedArrays {
 
     }
 
+
+
+    public static void merge(int[] a, int[] b, int m, int n){
+
+        // Traverse through both arrays simultaneously using two index variables i and j
+        int i=0, j=0;
+
+        while(i<m && j<n){
+
+            if(a[i] <= b[j]){
+                System.out.println(a[i]);
+                i++;
+            }
+            else{
+                System.out.println(b[j]);
+                j++;
+            }
+
+        }
+
+        while(i < m){
+            System.out.println(a[i]);
+            i++;
+        }
+
+        while(j < n){
+            System.out.println(b[j]);
+            j++;
+        }
+
+
+
+    }
+
+
     public static void main(String args[]){
 
         int[] a = {10,15,20,20};
         int[] b = {1,12};
-        mergeNaive(a,b, a.length, b.length);
+        merge(a,b, a.length, b.length);
 
     }
 
