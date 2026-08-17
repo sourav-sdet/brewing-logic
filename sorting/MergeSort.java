@@ -1,6 +1,5 @@
 package sorting;
 
-import sorting.*;
 
 public class MergeSort {
 
