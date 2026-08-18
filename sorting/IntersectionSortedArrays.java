@@ -27,12 +27,42 @@ public class IntersectionSortedArrays {
 
     }
 
+
+    public static void intersection(int arr1[], int arr2[]){
+
+        int i=0, j=0;
+
+        while(i < arr1.length && j < arr2.length){
+
+            // To handle duplicates
+            if(i > 0 && arr1[i] == arr1[i-1])
+                continue;
+
+            // Three Cases
+            if(arr1[i] < arr2[j]){
+                i++;
+            }
+
+            else if(arr1[i] > arr2[j]){
+                j++;
+            }
+            else{
+                System.out.println(arr1[i]);
+                i++;
+                j++;
+            }
+
+        }
+
+    }
+
+
     public static void main(String args[]){
 
         int[] arr1={1,20,20,40,60};
         int[] arr2={2,20,20,20};
-        intersectionNaive(arr1, arr2);
-        //intersection(arr1, arr2);
+        //intersectionNaive(arr1, arr2);
+        intersection(arr1, arr2);
         
 
 
