@@ -27,7 +27,7 @@ public class InsertionSort {
 
 
     }
-    
+
     public static void main(String args[]){
 
         int[] arr = {10,8,20,5};
@@ -40,6 +40,9 @@ public class InsertionSort {
     }
 
 
-
+    // Complexity Analysis
+    // Best Case - Array is already sorted - O(n)
+    // Worst Case - Array is reverse sorted - O(n^2)
+    // In General: O(n^2)
     
 }
