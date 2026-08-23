@@ -4,6 +4,10 @@ public class LomutoPartition {
 
     public static int lomutoPartition(int arr[], int l, int h){
 
+        // When p is given as an input
+        // Swap arr[p] and arr[h]
+        // Apply Standard Lomuto Partition Algorithm
+
         // Here assumption is that last element is always the pivot
         int p = arr[h];
         
