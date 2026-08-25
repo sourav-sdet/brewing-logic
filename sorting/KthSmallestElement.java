@@ -77,8 +77,8 @@ public class KthSmallestElement {
 
 
     public static void main(String args[]){
-        int arr[] = {10,3,5,20};
-        System.out.println(kthSmallestElementNaive(arr, arr.length, 2));
+        int arr[] = {10,4,5,8,11,6,26};
+        System.out.println(kthSmallestElementNaive(arr, arr.length, 5));
     }
     
 }
