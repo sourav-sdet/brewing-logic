@@ -31,10 +31,41 @@ public class SortArrayWithTwoTypes {
 
     }
 
+
+    public static void segregatePositiveNegative(int arr[], int n){
+
+        // Use Partition function of Quick Sort
+        // Either use Lomuto Partition or Hoare Partition
+        // Implementation using Hoare Partition
+
+        int i=-1, j=n;
+
+        while(true){
+
+            do { i++; } while( arr[i] < 0 );
+            do { j--; } while( arr[j] >=0 );
+
+            if(i >= j){
+                return;
+            }
+
+            // Swap arr[i] and arr[j]
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+
+
+        }
+
+
+    }
+
+
+
     public static void main(String args[]){
 
         int arr[] = {13,-12,18,10};
-        segregatePositiveNegativeNaive(arr, arr.length);
+        segregatePositiveNegative(arr, arr.length);
         for(int i=0; i<arr.length; i++){
             System.out.println(arr[i] + " ");
         }
