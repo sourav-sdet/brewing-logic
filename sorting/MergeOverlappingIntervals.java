@@ -40,18 +40,10 @@ public class MergeOverlappingIntervals {
     }
 
 
-
-
-
-
-
     public static void main(String args[]){
 
         Interval arr[] = { new Interval(5,10), new Interval(3,15), new Interval(18,30), new Interval(2,7)};
         mergeIntervals(arr, arr.length);
-        for(int i=0; i<arr.length; i++){
-            System.out.println(arr[i] + " ");
-        }
 
     }
     
