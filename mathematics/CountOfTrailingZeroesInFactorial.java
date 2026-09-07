@@ -23,13 +23,25 @@ public class CountOfTrailingZeroesInFactorial {
     }
 
 
+    public static int countTrailingZeroesEfficient(int num){
 
+        int count = 0;
+
+        for(int i=5; i<=num; i=i*5){
+
+            count = count + (num/i);
+        }
+
+        return count;
+
+    }
 
 
 
     public static void main(String args[]){
-        int num = 10;
-        System.out.println(countTrailingZeroesNaive(num));
+        int num = 251;
+        //System.out.println(countTrailingZeroesNaive(num));
+        System.out.println(countTrailingZeroesEfficient(num));
     }
     
 }
