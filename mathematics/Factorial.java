@@ -18,13 +18,23 @@ public class Factorial {
 
     }
 
+    public static int factorialRecursive(int num){
 
+        // Base Case
+        if(num == 0 )
+            return 1;
+
+        else 
+            return num * factorialRecursive(num - 1);
+
+
+    }
 
 
 
     public static void main(String args[]){
         int num = 5;
-        System.out.println(factorialIterative(num));
+        System.out.println(factorialRecursive(num));
     }
     
 }
