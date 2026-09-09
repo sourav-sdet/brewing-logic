@@ -18,11 +18,22 @@ public class LCM {
 
     }
 
+    public static int lcmEfficient(int a, int b){
+
+        // Use Euclidean Algorithm to find gcd(a,b)
+        int gcd = GCD.gcdEuclideanOptimized(a,b);
+
+        return (a*b)/gcd;
+
+
+
+    }
+
 
     public static void main(String args[]){
 
         int a=4, b=6;
-        System.out.println(lcmNaive(a,b));
+        System.out.println(lcmEfficient(a,b));
 
 
     }
