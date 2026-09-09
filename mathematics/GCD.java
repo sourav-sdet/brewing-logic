@@ -18,7 +18,7 @@ public class GCD {
 
     }
 
-    public static int gcd(int a, int b){
+    public static int gcdEuclideanBasic(int a, int b){
 
         while(a != b){
 
@@ -32,10 +32,21 @@ public class GCD {
 
     }
 
+
+    public static int gcdEuclideanOptimized(int a, int b){
+
+        if (b == 0)
+            return a;
+
+        else
+            return gcdEuclideanOptimized(b, a % b);
+
+    }
+
     public static void main(String args[]){
 
         int a=4, b=6;
-        System.out.println(gcd(a,b));
+        System.out.println(gcdEuclideanOptimized(a,b));
 
 
     }
