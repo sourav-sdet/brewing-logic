@@ -30,7 +30,7 @@ public class SieveOfEratosthenes {
 
 
         for(int i=2; i*i <=num; i++){
-            if(CheckPrime.isPrime(i)){
+            if(isPrime[i]){
                 for(int j= 2*i; j<=num; j=j+i){
                     isPrime[j] = false;
                 }
