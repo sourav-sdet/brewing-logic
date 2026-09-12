@@ -69,7 +69,7 @@ public class PrimeFactors {
         }
 
         // When largest prime factor has power 1, falls into this case
-        if(num > 1)
+        if(num > 3)
             System.out.println(num);
 
     }
