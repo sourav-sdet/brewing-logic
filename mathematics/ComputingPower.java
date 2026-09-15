@@ -15,11 +15,27 @@ public class ComputingPower {
     }
 
 
+    public static int computePower(int x, int n){
+
+        if (n == 0)
+            return 1;
+
+        int temp = computePower(x, n/2);
+        temp = temp * temp;
+
+        if(n %2 ==0)
+            return temp;
+        else 
+            return temp * x;
+
+    }
+
+
 
 
     public static void main(String args[]){
 
-        System.out.println(computePowerNaive(2,3));
+        System.out.println(computePower(2,3));
 
 
     }
